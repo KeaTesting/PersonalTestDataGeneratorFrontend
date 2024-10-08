@@ -38,18 +38,18 @@ const handlePersonData = (data) => {
 
     data.forEach(item => {
         const personCard = document.importNode(document.getElementById('personTemplate').content, true);
-        if (item.CPR !== undefined) {
+        if (item.cpr !== undefined) {
             const cprValue = personCard.querySelector('.cprValue');
-            cprValue.innerText = item.CPR;
+            cprValue.innerText = item.cpr;
             cprValue.classList.remove('hidden');
             personCard.querySelector('.cpr').classList.remove('hidden');
         }
-        if (item.firstName !== undefined) {
+        if (item.name !== undefined) {
             const firstNameValue = personCard.querySelector('.firstNameValue');
-            firstNameValue.innerText = item.firstName;
+            firstNameValue.innerText = item.name;
             firstNameValue.classList.remove('hidden');
             const lastNameValue = personCard.querySelector('.lastNameValue');
-            lastNameValue.innerText = item.lastName;
+            lastNameValue.innerText = item.surname;
             lastNameValue.classList.remove('hidden');
             personCard.querySelector('.firstName').classList.remove('hidden');
             personCard.querySelector('.lastName').classList.remove('hidden');
@@ -60,9 +60,9 @@ const handlePersonData = (data) => {
             genderValue.classList.remove('hidden');
             personCard.querySelector('.gender').classList.remove('hidden');
         }        
-        if (item.birthDate !== undefined) {
+        if (item.birthday !== undefined) {
             const dobValue = personCard.querySelector('.dobValue');
-            dobValue.innerText = item.birthDate;
+            dobValue.innerText = item.birthday;
             dobValue.classList.remove('hidden');
             personCard.querySelector('.dob').classList.remove('hidden');
         }
