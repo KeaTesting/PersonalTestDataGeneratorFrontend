@@ -6,7 +6,7 @@ document.querySelector('#frmGenerate').addEventListener('submit', (e) => {
     // The endpoint is inferred from the selected option
     let endpoint = '/';
     if (e.target.chkPerson.checked) {
-        endpoint += ''
+        endpoint += 'person'
         const numPersons = parseInt(e.target.txtNumberPersons.value);
         if (numPersons > 1) {
             endpoint += '?n=' + numPersons;
