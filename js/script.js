@@ -38,13 +38,13 @@ const handlePersonData = (data) => {
 
     data.forEach(item => {
         const personCard = document.importNode(document.getElementById('personTemplate').content, true);
-        if (item.cpr !== undefined) {
+        if (item.cpr !== null) {
             const cprValue = personCard.querySelector('.cprValue');
             cprValue.innerText = item.cpr;
             cprValue.classList.remove('hidden');
             personCard.querySelector('.cpr').classList.remove('hidden');
         }
-        if (item.name !== undefined) {
+        if (item.name !== null) {
             const firstNameValue = personCard.querySelector('.firstNameValue');
             firstNameValue.innerText = item.name;
             firstNameValue.classList.remove('hidden');
@@ -54,28 +54,28 @@ const handlePersonData = (data) => {
             personCard.querySelector('.firstName').classList.remove('hidden');
             personCard.querySelector('.lastName').classList.remove('hidden');
         }    
-        if (item.gender !== undefined) {
+        if (item.gender !== null) {
             const genderValue = personCard.querySelector('.genderValue');
             genderValue.innerText = item.gender;
             genderValue.classList.remove('hidden');
             personCard.querySelector('.gender').classList.remove('hidden');
         }        
-        if (item.birthday !== undefined) {
+        if (item.birthday !== null) {
             const dobValue = personCard.querySelector('.dobValue');
             dobValue.innerText = item.birthday;
             dobValue.classList.remove('hidden');
             personCard.querySelector('.dob').classList.remove('hidden');
         }
-        if (item.address !== undefined) {
+        if (item.address !== null) {
             const streetValue = personCard.querySelector('.streetValue');
-            streetValue.innerText = `${item.address.street} ${item.address.number}, ${item.address.floor}.${item.address.door}`;
+            streetValue.innerText = `${item.address}`;
             streetValue.classList.remove('hidden');
             const townValue = personCard.querySelector('.townValue');
-            townValue.innerText = `${item.address.postal_code} ${item.address.town_name}`;
+            townValue.innerText = "";
             townValue.classList.remove('hidden');
             personCard.querySelector('.address').classList.remove('hidden');
         }
-        if (item.phoneNumber !== undefined) {
+        if (item.phoneNumber !== null) {
             const phoneNumberValue = personCard.querySelector('.phoneNumberValue');
             phoneNumberValue.innerText = item.phoneNumber;
             phoneNumberValue.classList.remove('hidden');
